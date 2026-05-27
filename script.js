@@ -331,11 +331,13 @@ if (themeToggle) {
 (function typewriter() {
   const words = [
     "Federated Learning",
-    "Medical Imaging",
-    "Privacy-Preserving ML",
-    "Byzantine Robustness",
-    "Machine Unlearning",
-    "Distributed AI"
+    "Federated Unlearning",
+    "Trustworthy AI",
+    "Privacy-Preserving Machine Learning",
+    "Medical AI",
+    "Computer Vision",
+    "Representation Learning",
+    "Distributed AI Systems"
   ];
   const el = document.getElementById('tw-text');
   if (!el) return;
