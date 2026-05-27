@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mayank Kundalwal | Research Scientist — Federated Learning & AI</title>
+  <meta name="description" content="PhD Research Scientist — Federated Learning, Privacy-Preserving ML, Medical AI. IIT Jodhpur. 74+ citations. IEEE TAI, TETCI, WACV 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style3.css" />
+</head>
+<body>
+
+  <!-- ══ CURSOR FOLLOWER ══════════════════════════════ -->
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="cursor-trail" aria-hidden="true"></div>
+
+  <!-- ══ PARTICLE CANVAS ══════════════════════════════ -->
+  <canvas id="canvas" aria-hidden="true"></canvas>
+
+  <!-- ══ NAVBAR ════════════════════════════════════════ -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="logo">
+        <!-- Premium Double-Track MK Monogram App Icon -->
+        <svg class="logo-svg" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="logo-grad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="var(--teal)"/>
+              <stop offset="100%" stop-color="var(--sky)"/>
+            </linearGradient>
+          </defs>
+          <!-- Frosted App Icon Glass Backdrop -->
+          <rect x="2" y="2" width="36" height="36" rx="10" fill="var(--glass)" stroke="var(--glass-stroke)" stroke-width="1.2" />
+          <!-- Outer Track M -->
+          <path d="M9 28V12L15 20L21 12V28" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Inner Track M -->
+          <path d="M12 28V15.5L15 19.5L18 15.5V28" stroke="url(#logo-grad)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.65" />
+          <!-- Outer Track K -->
+          <path d="M21 20L27 12M21 20L27 28" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Inner Track K -->
+          <path d="M21 20L24.5 15.5M21 20L24.5 24.5" stroke="url(#logo-grad)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.65" />
+        </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+        <!-- Sun icon (shows in dark mode) -->
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <!-- Moon icon (shows in light mode) -->
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      <a href="mailto:kundalwal.1@iitj.ac.in" class="nav-btn">
+        <span>Contact Me</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button id="ham" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div id="mob-menu" hidden>
+      <a href="#about">About</a><a href="#research">Research</a>
+      <a href="#publications">Publications</a><a href="#experience">Experience</a>
+      <a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-container">
+
+      <!-- Left: text -->
+      <div class="hero-left">
+        <div class="hero-pill reveal">
+          <span class="pill-pulse"></span>
+          PhD Researcher &nbsp;·&nbsp; IIT Jodhpur
+        </div>
+
+        <h1 class="hero-h1 reveal">
+          Mayank<br><span class="grad-text">Kundalwal</span>
+        </h1>
+
+        <p class="hero-role reveal">
+          Federated Learning &amp; Privacy-Preserving AI
+        </p>
+
+        <!-- Typewriter keyword line -->
+        <div class="typewriter-wrap reveal">
+          <span class="tw-prefix">Researching&nbsp;</span>
+          <span class="tw-text" id="tw-text"></span><span class="tw-cursor" aria-hidden="true">|</span>
+        </div>
+
+
+
+        <div class="hero-kpi reveal">
+          <div class="kpi-block">
+            <strong class="count" data-to="74">0</strong><sup>+</sup>
+            <span>Citations</span>
+          </div>
+          <div class="kpi-sep"></div>
+          <div class="kpi-block">
+            <strong class="count" data-to="4">0</strong>
+            <span>FL Frameworks</span>
+          </div>
+          <div class="kpi-sep"></div>
+          <div class="kpi-block">
+            <strong class="count" data-to="7">0</strong>
+            <span>Publications</span>
+          </div>
+          <div class="kpi-sep"></div>
+          <div class="kpi-block">
+            <strong class="count" data-to="6">0</strong>
+            <span>Yrs Research</span>
+          </div>
+        </div>
+
+        <div class="hero-btns reveal">
+          <a href="#contact" class="btn-main tilt-btn">
+            <span>Get in Touch</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#publications" class="btn-outline tilt-btn">View Publications</a>
+        </div>
+      </div>
+
+      <!-- Right: avatar -->
+      <div class="hero-right reveal">
+        <div class="avatar-shell">
+          <div class="avatar-rings">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+          </div>
+          <div class="avatar-img-wrap">
+            <img src="avatar.png" alt="Mayank Kundalwal — AI Research Scientist" class="avatar-img" fetchpriority="high" />
+          </div>
+          <div class="avatar-tag tag-a">IEEE TAI · 2025</div>
+          <div class="avatar-tag tag-b">WACV 2026 🏆</div>
+          <div class="avatar-tag tag-c">74+ Citations</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ══════════════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <p class="sec-eyebrow reveal">01 / About</p>
+      <div class="about-layout">
+        <div class="about-left">
+          <h2 class="sec-h2 reveal">Collaborative AI: <span class="grad-text">Secure &amp; Robust by Design</span></h2>
+          <p class="body-text reveal">I am a <strong>PhD candidate in Computer Science &amp; Engineering</strong> at IIT Jodhpur (thesis submitted), working under the guidance of Dr. Deepak Mishra. My research focuses on the intersection of federated learning, privacy-preserving machine learning, and medical image analysis — designing architectures that enable collaborative model training without compromising patient confidentiality.</p>
+          <p class="body-text reveal">My doctoral work introduces <strong>four original Federated Learning frameworks</strong> to systematically resolve core distributed challenges: communication efficiency (BAFL), label scarcity (FLAME), Byzantine-attack robustness (AR2FL), and client-side machine unlearning (SPU) for regulatory compliance.</p>
+          <p class="body-text reveal">Beyond core distributed AI, I collaborate on sponsored defense research, developing robust, real-time machine learning pipelines for radar sensing and moving-target detection.</p>
+        </div>
+        <div class="about-right">
+          <h3 class="card-group-title reveal">Education</h3>
+          <div class="edu-cards">
+            <div class="edu-card featured reveal tilt-card">
+              <div class="edu-meta">
+                <span class="edu-yr">2019 – 2025</span>
+                <span class="edu-badge">PhD</span>
+              </div>
+              <h4>Computer Science &amp; Engineering</h4>
+              <p class="edu-uni">Indian Institute of Technology Jodhpur</p>
+              <p class="edu-note">Thesis: Towards Robust Privacy-Preserving Federated Learning under Heterogeneous Environments for Medical Imaging</p>
+            </div>
+            <div class="edu-card reveal tilt-card">
+              <div class="edu-meta">
+                <span class="edu-yr">2016 – 2018</span>
+                <span class="edu-badge">M.Tech</span>
+              </div>
+              <h4>Computer Science &amp; Engineering</h4>
+              <p class="edu-uni">National Institute of Technology Patna &nbsp;·&nbsp; CGPA 8.24 / 10</p>
+              <p class="edu-note">Thesis: Privacy-Preservation Framework for Cloud-Based Healthcare Systems</p>
+            </div>
+            <div class="edu-card reveal tilt-card">
+              <div class="edu-meta">
+                <span class="edu-yr">2012 – 2016</span>
+                <span class="edu-badge">B.Tech</span>
+              </div>
+              <h4>Computer Science &amp; Engineering</h4>
+              <p class="edu-uni">Poornima University Jaipur &nbsp;·&nbsp; CGPA 7.38 / 10</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ RESEARCH ═══════════════════════════════════════ -->
+  <section id="research" class="section section-glass">
+    <div class="container">
+      <p class="sec-eyebrow reveal">02 / Research</p>
+      <h2 class="sec-h2 reveal">Research <span class="grad-text">Interests</span></h2>
+      <div class="r-grid">
+        <div class="r-card reveal tilt-card" style="--d:0ms">
+          <div class="r-icon">🔐</div>
+          <h3>Federated Learning</h3>
+          <p>Privacy-aware distributed training under real-world Non-IID heterogeneity — without centralising sensitive data.</p>
+          <div class="r-hover-bar"></div>
+        </div>
+        <div class="r-card reveal tilt-card" style="--d:60ms">
+          <div class="r-icon">🛡️</div>
+          <h3>Privacy-Preserving ML</h3>
+          <p>Formal privacy bounds, Byzantine robustness, and machine unlearning for regulatory compliance.</p>
+          <div class="r-hover-bar"></div>
+        </div>
+        <div class="r-card reveal tilt-card" style="--d:120ms">
+          <div class="r-icon">🏥</div>
+          <h3>Medical AI</h3>
+          <p>High-accuracy FL for medical imaging with as few as 5% labeled samples using masked autoencoders.</p>
+          <div class="r-hover-bar"></div>
+        </div>
+        <div class="r-card reveal tilt-card" style="--d:180ms">
+          <div class="r-icon">🤖</div>
+          <h3>Trustworthy AI</h3>
+          <p>Anomaly-resistant aggregation strategies resilient to Byzantine attacks in heterogeneous FL settings.</p>
+          <div class="r-hover-bar"></div>
+        </div>
+        <div class="r-card reveal tilt-card" style="--d:240ms">
+          <div class="r-icon">📡</div>
+          <h3>Defense Sensing</h3>
+          <p>Real-time long-range moving-target detection on pulse-Doppler radar under adverse conditions.</p>
+          <div class="r-hover-bar"></div>
+        </div>
+        <div class="r-card reveal tilt-card" style="--d:300ms">
+          <div class="r-icon">🧠</div>
+          <h3>Representation Learning</h3>
+          <p>Masked autoencoders and prototype-based embeddings for rich federated feature learning.</p>
+          <div class="r-hover-bar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PUBLICATIONS ════════════════════════════════════ -->
+  <section id="publications" class="section">
+    <div class="container">
+      <p class="sec-eyebrow reveal">03 / Publications</p>
+      <h2 class="sec-h2 reveal"><span class="grad-text">Scholarly</span> Work</h2>
+
+      <h3 class="pub-group reveal">Journal Articles</h3>
+
+      <div class="pub-list">
+        <article class="pub-item reveal tilt-card">
+          <div class="pub-side">
+            <span class="pub-yr">2025</span>
+            <span class="pub-venue v-j">IEEE TETCI</span>
+          </div>
+          <div class="pub-body">
+            <h4>FLAME: Federated Learning with Masked Autoencoders and Mean-Prototypes Embedding for Sparsely Labeled Medical Images</h4>
+            <p class="pub-auth"><strong>M. K. Kundalwal</strong> &amp; D. Mishra</p>
+            <p class="pub-abs">Enables high-accuracy FL with as few as 5% labeled samples using masked autoencoders and prototype-based embedding.</p>
+            <div class="pub-tags"><span>Federated Learning</span><span>Medical Imaging</span><span>Masked Autoencoders</span></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal tilt-card">
+          <div class="pub-side">
+            <span class="pub-yr">2025</span>
+            <span class="pub-venue v-j">IEEE TAI</span>
+          </div>
+          <div class="pub-body">
+            <h4>AR2FL: Anomaly-Resistant Robust Framework for Federated Learning</h4>
+            <p class="pub-auth"><strong>M. K. Kundalwal</strong> &amp; D. Mishra</p>
+            <p class="pub-abs">Robust aggregation resilient to Byzantine &amp; adversarial anomalies; consistent gains over FedAvg under IID and non-IID.</p>
+            <div class="pub-tags"><span>Byzantine Robustness</span><span>Adversarial ML</span><span>Non-IID</span></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal tilt-card">
+          <div class="pub-side">
+            <span class="pub-yr">2019</span>
+            <span class="pub-venue v-j">ICT Express</span>
+          </div>
+          <div class="pub-body">
+            <h4>An Improved Privacy Preservation Technique in Health-Cloud</h4>
+            <p class="pub-auth"><strong>M. K. Kundalwal</strong>, K. Chatterjee &amp; A. Singh · Elsevier, Vol. 5, pp. 167–172</p>
+            <p class="pub-abs">Enhanced privacy-preservation mechanism for cloud-based healthcare data management.</p>
+            <div class="pub-tags"><span>Cloud Privacy</span><span>Healthcare</span></div>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="pub-group reveal" style="margin-top:3rem">Conference Proceedings</h3>
+
+      <div class="pub-list">
+        <article class="pub-item reveal tilt-card">
+          <div class="pub-side">
+            <span class="pub-yr">2026</span>
+            <span class="pub-venue v-c">WACV 2026</span>
+          </div>
+          <div class="pub-body">
+            <h4>Federated Model Synchronization for Diagnostic Redefinition through Selective Parameter Unlearning</h4>
+            <p class="pub-auth"><strong>M. K. Kundalwal</strong> &amp; D. Mishra &nbsp;·&nbsp; 🏆 DEI Travel Grant Recipient</p>
+            <p class="pub-abs">Selective parameter unlearning for compliant model updates without full retraining — addresses "right-to-be-forgotten."</p>
+            <div class="pub-tags"><span>Machine Unlearning</span><span>WACV</span><span>🏆 DEI Grant</span></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal tilt-card">
+          <div class="pub-side">
+            <span class="pub-yr">2024</span>
+            <span class="pub-venue v-c">INDICON</span>
+          </div>
+          <div class="pub-body">
+            <h4>Client Contribution Normalization for Enhanced Federated Learning</h4>
+            <p class="pub-auth"><strong>M. K. Kundalwal</strong>, A. Saraswat, I. Mishra &amp; D. Mishra · IEEE 21st India Council</p>
+            <p class="pub-abs">Normalization of client-side contributions to improve fairness and convergence in federated settings.</p>
+            <div class="pub-tags"><span>Fairness</span><span>Federated Learning</span></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal tilt-card">
+          <div class="pub-side">
+            <span class="pub-yr">2022</span>
+            <span class="pub-venue v-c">ICPR 2022</span>
+          </div>
+          <div class="pub-body">
+            <h4>BAFL: Federated Learning with Base Ablation for Cost Effective Communication</h4>
+            <p class="pub-auth"><strong>M. K. Kundalwal</strong>, A. Saraswat, I. Mishra &amp; D. Mishra</p>
+            <p class="pub-abs">Significant bandwidth reduction with minimal accuracy trade-off by transmitting only base-layer parameters.</p>
+            <div class="pub-tags"><span>Communication Efficiency</span><span>ICPR</span></div>
+          </div>
+        </article>
+
+        <article class="pub-item reveal tilt-card">
+          <div class="pub-side">
+            <span class="pub-yr">2018</span>
+            <span class="pub-venue v-c">ICACCCN</span>
+          </div>
+          <div class="pub-body">
+            <h4>A Privacy Framework in Cloud Computing for Healthcare Data</h4>
+            <p class="pub-auth"><strong>M. K. Kundalwal</strong>, A. Singh &amp; K. Chatterjee · IEEE</p>
+            <p class="pub-abs">Comprehensive privacy framework for cloud-based healthcare data with robust access controls.</p>
+            <div class="pub-tags"><span>Privacy</span><span>Cloud Computing</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EXPERIENCE ══════════════════════════════════════ -->
+  <section id="experience" class="section section-glass">
+    <div class="container">
+      <p class="sec-eyebrow reveal">04 / Experience</p>
+      <h2 class="sec-h2 reveal">Research <span class="grad-text">Experience</span></h2>
+      <div class="exp-grid">
+        <div class="exp-card reveal tilt-card">
+          <div class="exp-hd">
+            <div class="exp-emoji">🔬</div>
+            <span class="exp-tenure">2019 – 2025</span>
+          </div>
+          <h3>Doctoral Researcher</h3>
+          <p class="exp-sub">Federated Learning Systems</p>
+          <p class="exp-org">MAISys Lab · IIT Jodhpur</p>
+          <ul class="exp-ul">
+            <li>Designed BAFL, FLAME, AR2FL &amp; SPU frameworks in PyTorch covering communication, semi-supervision, robustness &amp; unlearning.</li>
+            <li>Developed theoretical convergence proofs and formal privacy guarantees.</li>
+            <li>2 IEEE Transactions + 1 WACV paper + 2 under review; 74+ citations.</li>
+          </ul>
+        </div>
+        <div class="exp-card reveal tilt-card">
+          <div class="exp-hd">
+            <div class="exp-emoji">📡</div>
+            <span class="exp-tenure">2023 – 2025</span>
+          </div>
+          <h3>Research Collaborator</h3>
+          <p class="exp-sub">Defense AI Sensing</p>
+          <p class="exp-org">Indian Army Sponsored · IIT Jodhpur</p>
+          <ul class="exp-ul">
+            <li>Real-time long-range moving-target detection on pulse-Doppler radar under adverse conditions.</li>
+            <li>Built radar signal processing pipeline, motion feature extraction &amp; robust ML-based detection models.</li>
+            <li>Applied experience in safety-critical, resource-constrained intelligent sensing systems.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SKILLS ═══════════════════════════════════════════ -->
+  <section id="skills" class="section">
+    <div class="container">
+      <p class="sec-eyebrow reveal">05 / Skills</p>
+      <h2 class="sec-h2 reveal">Technical <span class="grad-text">Toolkit</span></h2>
+      <div class="skill-grid">
+        <div class="skill-block reveal tilt-card">
+          <h3>Languages</h3>
+          <div class="tag-cloud">
+            <span class="tag tag-hot">Python</span><span class="tag">C / C++</span>
+            <span class="tag">Java</span><span class="tag">Bash</span>
+          </div>
+        </div>
+        <div class="skill-block reveal tilt-card">
+          <h3>ML Frameworks</h3>
+          <div class="tag-cloud">
+            <span class="tag tag-hot">PyTorch</span><span class="tag tag-hot">TensorFlow</span>
+            <span class="tag">Keras</span><span class="tag">Flower (FL)</span><span class="tag">scikit-learn</span>
+          </div>
+        </div>
+        <div class="skill-block reveal tilt-card">
+          <h3>Federated &amp; Distributed</h3>
+          <div class="tag-cloud">
+            <span class="tag tag-hot">FedAvg / FedProx</span><span class="tag">SCAFFOLD</span>
+            <span class="tag">Dirichlet Non-IID</span><span class="tag">Multi-client Sim</span>
+          </div>
+        </div>
+        <div class="skill-block reveal tilt-card">
+          <h3>Data &amp; DevOps</h3>
+          <div class="tag-cloud">
+            <span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span>
+            <span class="tag">W&amp;B</span><span class="tag">Git / GitHub</span>
+            <span class="tag">LaTeX</span><span class="tag">Linux / HPC</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Awards -->
+      <h3 class="card-group-title reveal" style="margin-top:3.5rem">Honors &amp; Awards</h3>
+      <div class="award-grid">
+        <div class="award-tile reveal tilt-card"><div class="aw-yr">2026</div><p>IEEE/CVF DEI Broadening Participation Travel Grant — WACV 2026</p></div>
+        <div class="award-tile reveal tilt-card"><div class="aw-yr">2025</div><p>Graduate Forum Poster — IndoML 2025</p></div>
+        <div class="award-tile reveal tilt-card"><div class="aw-yr">2023–25</div><p>Defense Research Funding Support (Indian Army)</p></div>
+        <div class="award-tile reveal tilt-card"><div class="aw-yr">2019–23</div><p>Ministry of Education Doctoral Fellowship (MHRD)</p></div>
+        <div class="award-tile reveal tilt-card"><div class="aw-yr">2016–18</div><p>MHRD Fellowship, NIT Patna</p></div>
+        <div class="award-tile reveal tilt-card"><div class="aw-yr">2023–</div><p>Cyber Volunteer Squad, Ministry of Home Affairs, India</p></div>
+      </div>
+
+      <!-- Reviewer -->
+      <div class="reviewer-row reveal">
+        <span class="reviewer-label">Peer Reviewer for:</span>
+        <span class="rev-chip">IEEE TAI</span><span class="rev-chip">IEEE TETCI</span>
+        <span class="rev-chip">IEEE IoT</span><span class="rev-chip">IEEE TDSC</span>
+        <span class="rev-chip">WACV</span><span class="rev-chip">ICPR</span>
+        <span class="rev-chip">IJCAI</span><span class="rev-chip">ECAI</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ═══════════════════════════════════════════ -->
+  <section id="contact" class="section section-glass">
+    <div class="container">
+      <p class="sec-eyebrow reveal">06 / Contact</p>
+      <h2 class="sec-h2 reveal">Let's <span class="grad-text">Connect</span></h2>
+      <p class="contact-sub reveal">Open to Research Scientist &amp; Postdoctoral positions advancing privacy-aware and trustworthy distributed AI.</p>
+
+      <div class="contact-grid">
+        <a href="mailto:kundalwal.1@iitj.ac.in" class="contact-card reveal tilt-card">
+          <div class="cc-icon">✉️</div>
+          <p class="cc-label">Email</p>
+          <p class="cc-val">kundalwal.1@iitj.ac.in</p>
+          <div class="cc-arrow">↗</div>
+        </a>
+        <a href="tel:+919261444448" class="contact-card reveal tilt-card">
+          <div class="cc-icon">📱</div>
+          <p class="cc-label">Phone</p>
+          <p class="cc-val">+91 9261 444 448</p>
+          <div class="cc-arrow">↗</div>
+        </a>
+        <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="contact-card reveal tilt-card">
+          <div class="cc-icon">💼</div>
+          <p class="cc-label">LinkedIn</p>
+          <p class="cc-val">linkedin.com/in/mayank-kundalwal</p>
+          <div class="cc-arrow">↗</div>
+        </a>
+        <a href="https://scholar.google.com/" target="_blank" rel="noopener" class="contact-card reveal tilt-card">
+          <div class="cc-icon">📚</div>
+          <p class="cc-label">Google Scholar</p>
+          <p class="cc-val">74+ Citations</p>
+          <div class="cc-arrow">↗</div>
+        </a>
+      </div>
+
+      <!-- References -->
+      <h3 class="card-group-title reveal" style="margin-top:3rem">References</h3>
+      <div class="ref-grid">
+        <div class="ref-card reveal tilt-card">
+          <h4>Dr. Deepak Mishra</h4>
+          <p>Associate Professor, CSE · IIT Jodhpur</p>
+          <a href="mailto:dmishra@iitj.ac.in">dmishra@iitj.ac.in ↗</a>
+        </div>
+        <div class="ref-card reveal tilt-card">
+          <h4>Dr. Suman Kundu</h4>
+          <p>Assistant Professor, CSE · IIT Madras</p>
+          <a href="mailto:suman@dsai.iitm.ac.in">suman@dsai.iitm.ac.in ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="container">
+      <p>© 2025 <strong>Mayank Kundalwal</strong> · IIT Jodhpur</p>
+      <p>Advancing privacy-aware distributed AI for a trustworthy future.</p>
+    </div>
+  </footer>
+
+  <script src="script3.js"></script>
+</body>
+</html>
