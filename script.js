@@ -240,7 +240,7 @@ document.querySelectorAll('.count[data-to]').forEach(el => {
         requestAnimationFrame(step);
       }
     });
-  }, { threshold: 0.6 });
+  }, { threshold: 0.1 });
   obs.observe(el);
 });
 

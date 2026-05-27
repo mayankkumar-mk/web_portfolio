@@ -271,6 +271,20 @@ body:has(.tilt-card:hover) #cursor-trail { opacity: 0; }
   box-shadow: 0 8px 28px rgba(0,230,195,0.35);
 }
 
+.nav-cv-btn {
+  background: transparent !important;
+  border-color: var(--glass-stroke) !important;
+  color: var(--text-2) !important;
+}
+
+.nav-cv-btn:hover {
+  background: var(--glass-stroke-h) !important;
+  color: var(--teal) !important;
+  border-color: var(--teal) !important;
+  box-shadow: 0 4px 15px rgba(0,230,195,0.15) !important;
+}
+
+
 .theme-toggle-btn {
   background: var(--glass);
   border: 1px solid var(--glass-stroke);
